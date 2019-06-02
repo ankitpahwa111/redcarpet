@@ -1,5 +1,5 @@
 import React from 'react'
-import StoreSummary from './StoreSummary';
+import StoreSummary from './ReviewSummary';
 
 
 import { connect } from 'react-redux';
