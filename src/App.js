@@ -8,6 +8,7 @@ import ReviewList from './components/Review/ReviewList'
 import Signin from './components/Auth/signin'
 import ReviewDetails from './components/Review/ReviewDetails'
 //import Create from './components/Rrojects/createProject';
+//import ReviewList from './components/Review/ReviewList'
 class App extends Component {
   render() {
     return (
@@ -18,7 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Dashboard}></Route>
             <Route exact path = '/signin' component = {Signin} ></Route>
-            <Route exact path = '/userwall' component = {Signin}></Route>
+            <Route exact path = '/userwall' component = {ReviewList}></Route>
             <Route path="/adminwall" component={Signin}></Route>
             <Route path="/create" component={Signin}></Route>
 

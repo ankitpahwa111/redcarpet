@@ -1,44 +1,22 @@
 import React from 'react'
 import ReviewSummary from './ReviewSummary';
-
+import {Redirect} from 'react-router-dom'
 
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const ReviewList = (props) => {
-  
-  const user = props.user;
-  
-  let stores = [{
-    "name": "Test Store",
-    "category": "Food",
-    "plans": [
-        1
-    ],
-    "categories_available": [
-        "snacks"
-    ],
-    "store_logo_url": "https://d28fujbigzf56k.cloudfront.net/static/img/store-logo.png",
-    "place": {
-        "id": 1,
-        "street_address": "BTW, M2K Road, Mangalam Place, Sector 3, Rohini",
-        "city": "Delhi",
-        "state": "Delhi",
-        "latitude": 28.7003629,
-        "longitude": 77.1174550000001,
-        "cover_pic_url": "https://d28fujbigzf56k.cloudfront.net/static/img/placelogo.png"
-    },
-    "hcash_limit": 10.0,
-    "hcash_percentage": 3.0,
-    "is_verified": true,
-    "active": true
-  }]
+  if(!props.user){
+    return <Redirect to='/'></Redirect>
+  }
+  const {reviews} = props;
+  console.log(reviews)
   
   return (
     <div className="store-list section">
-      {stores && stores.map(store =>
+      {reviews && reviews.map(review =>
         
-          <ReviewSummary review={store} />
+          <ReviewSummary review={review} />
         
       )
 
@@ -48,9 +26,10 @@ const ReviewList = (props) => {
   )
 }
 const mapStateToProps = (state) => {
-  console.log(state);
+  
   return {
-    user : state.user
+    user : state.user,
+    reviews : state.reviews
   }
 
 }

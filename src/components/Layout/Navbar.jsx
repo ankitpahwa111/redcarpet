@@ -5,7 +5,7 @@ import SignedOutLinks from './signedOutLinks';
 import { connect } from 'react-redux';
 const Navbar = (props) => {
     const { authError,user } = props;
-    console.log(user)
+    
     let Links = {};
     if (user)
         Links = <SignedInLinks />
@@ -21,7 +21,7 @@ const Navbar = (props) => {
     )
 }
 const mapStateToProps = (state) => {
-    console.log(state)
+   
     return {
         authError: state.authError,
         user : state.user
