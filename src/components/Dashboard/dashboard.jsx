@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
+import {connect} from 'react-redux'
 //import {Redirect} from 'react-router-dom'
 class Dashboard extends Component {
     state = {
@@ -35,7 +36,14 @@ class Dashboard extends Component {
         })
     }
     render() {
-
+        let link = <Link to='/signin'>Sign In</Link>;
+        if(this.props.user){
+            if(this.props.usertype=='reviewer')
+            link = <Link to = '/userwall'>Go To Wall</Link>;
+            else
+            link = <Link to = '/adminwall'>Go To Admin Wall</Link>
+        }
+        
         return (
             <div className="dashboard container">
                 <div className="mycard">
@@ -45,13 +53,13 @@ class Dashboard extends Component {
                                 <div class="card">
                                     <div class="card-image">
                                         <img src='https://s3.amazonaws.com/poly-screenshots.angel.co/enhanced_screenshots/1687048-original.' />
-                                        <span class="card-title red-text text-darken-2 ">Welcome To Halanx Stores</span>
+                                        <span class="card-title red-text text-darken-2 ">Red Carpet Reviewer</span>
                                     </div>
                                     <div class="card-content">
                                         <p class="h4">Through Halanx app, customers can know about their neighborhood happenings and they can order from neighborhood businesses like Grocery stores, restaurants, and pharmacies, and get it delivered in as little as an hour, through our part time shoppers. </p>
                                     </div>
                                     <div class="card-action">
-                                        <Link to='/stores'>Go To Stores </Link>
+                                        {link}
                                     </div>
                                 </div>
                             </div>
@@ -66,5 +74,11 @@ class Dashboard extends Component {
         )
     }
 }
-
-export default Dashboard;
+const mapStateToProps=(state)=>{
+    return {
+        authError : state.authError,
+        user : state.user,
+        usertype : state.usertype
+    }
+}
+export default connect(mapStateToProps)(Dashboard);

@@ -1,11 +1,11 @@
 import React from 'react'
-import StoreSummary from './ReviewSummary';
+import ReviewSummary from './ReviewSummary';
 
 
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const StoreList = (props) => {
+const ReviewList = (props) => {
   
   const user = props.user;
   
@@ -38,7 +38,7 @@ const StoreList = (props) => {
     <div className="store-list section">
       {stores && stores.map(store =>
         
-          <StoreSummary store={store} />
+          <ReviewSummary review={store} />
         
       )
 
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => {
   }
 
 }
-export default connect(mapStateToProps)(StoreList)
+export default connect(mapStateToProps)(ReviewList)

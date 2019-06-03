@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Chart from './Chart'
+
 
 
 class UserDetails extends Component {
@@ -9,34 +9,34 @@ class UserDetails extends Component {
         chartData:{}
     }
 
-    componentWillMount(){
-        this.getChartData();
-      }
-      getChartData(){
-        // Ajax calls here
-        this.setState({
-          chartData:{
-            labels: ['2019-04-04', '2019-04-09', '2019-04-11'],
-            datasets:[
-              {
-                label:'Dates',
-                data:[
-                  6,
-                  1,
-                  6
+    // componentWillMount(){
+    //     this.getChartData();
+    //   }
+    //   getChartData(){
+    //     // Ajax calls here
+    //     this.setState({
+    //       chartData:{
+    //         labels: ['2019-04-04', '2019-04-09', '2019-04-11'],
+    //         datasets:[
+    //           {
+    //             label:'Dates',
+    //             data:[
+    //               6,
+    //               1,
+    //               6
                   
-                ],
-                backgroundColor:[
-                  'rgba(255, 99, 132, 0.6)',
-                  'rgba(54, 162, 235, 0.6)',
-                  'rgba(255, 206, 86, 0.6)',
+    //             ],
+    //             backgroundColor:[
+    //               'rgba(255, 99, 132, 0.6)',
+    //               'rgba(54, 162, 235, 0.6)',
+    //               'rgba(255, 206, 86, 0.6)',
                   
-                ]
-              }
-            ]
-          }
-        });
-      }
+    //             ]
+    //           }
+    //         ]
+    //       }
+    //     });
+    //   }
 
     render() {
         
@@ -90,7 +90,7 @@ class UserDetails extends Component {
                                 <span><blockquote>Verified :<i class="material-icons">check</i> </blockquote></span>
                                 <br/>
                                 <br/>
-                                <Chart chartData={this.state.chartData} location="2019-04-11" legendPosition="bottom"/>
+                                {/* <Chart chartData={this.state.chartData} location="2019-04-11" legendPosition="bottom"/> */}
                                 
                                
                             </div>

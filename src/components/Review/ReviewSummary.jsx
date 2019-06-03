@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import $ from 'jquery';
-class ProjectSummary extends Component {
+
+class ReviewSummary extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -66,11 +66,7 @@ class ProjectSummary extends Component {
         
     }
     
-    componentDidMount() {
-
-        window.$('select').material_select()
-
-    }
+    
     handleChange=(e)=>{
         this.setState({
             [e.target.id]: e.target.value
@@ -172,4 +168,4 @@ class ProjectSummary extends Component {
 
 }
 
-export default  (ProjectSummary);
+export default  (ReviewSummary);

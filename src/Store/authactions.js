@@ -28,9 +28,17 @@ export const signIn = (credentials) => {
                 username : 'test',
                 password : 'test'
             }
-            dispatch({type: 'LOGIN_SUCCESS' , user : user})
+            dispatch({type: 'LOGIN_SUCCESS' , user : user , usertype : 'reviewer'})
         }
-        else {
+        else if(credentials.username === 'admin' && credentials.password==='admin') {
+            let user = {
+                username : 'admin',
+                password : 'admin'
+            }
+            dispatch({type: 'LOGIN_SUCCESS' , user : user , usertype : 'admin'})
+            
+        }
+        else{
             dispatch({type: 'LOGIN_FAILED'})
         }
     }
