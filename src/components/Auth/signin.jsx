@@ -15,9 +15,9 @@ class Signin extends Component {
     handleOnSubmit = async (e) => {
         e.preventDefault();
         
-        this.props.signIn(this.state)
+        await this.props.signIn(this.state)
         
-        if(this.props.authError)
+        if(this.props.user)
         this.props.history.push('/')
     }
     render() {
@@ -63,7 +63,7 @@ const mapDispatchToProps=(dispatch)=>{
 const mapStateToProps=(state)=>{
     return {
         authError : state.authError,
-        usertype : state.usertype
+        user : state.user,
     }
 }
 

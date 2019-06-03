@@ -20,6 +20,8 @@ class App extends Component {
             <Route exact path = '/signin' component = {Signin} ></Route>
             <Route exact path = '/userwall' component = {Signin}></Route>
             <Route path="/adminwall" component={Signin}></Route>
+            <Route path="/create" component={Signin}></Route>
+
           </Switch>
           <Footer/>
         </div>
