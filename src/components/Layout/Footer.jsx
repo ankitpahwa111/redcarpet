@@ -7,9 +7,9 @@ const Footer = (props) => {
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 class="white-text"><blockquote>Halanx Pvt Ltd. </blockquote></h5>
+                        <h5 class="white-text"><blockquote>RedCarpet Pvt Ltd. </blockquote></h5>
                         <br/>
-                        <Link class="grey-text text-lighten-3" to="/">How To Use Halanx.com ? </Link> <br/>
+                        <Link class="grey-text text-lighten-3" to="/">How To Use Reviewer ? </Link> <br/>
                         <Link class="grey-text text-lighten-3" to="/">Community</Link> <br/>
                         <Link class="grey-text text-lighten-3" to="/">Contribute</Link>
                     </div>

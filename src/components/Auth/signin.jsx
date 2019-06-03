@@ -33,7 +33,7 @@ class Signin extends Component {
                     <h5 className="dark-grey text-darken-3">Sign In</h5>
                     <div className="input-field">
                         <label htmlFor="username" >Username</label>
-                        <input type="text" id="username" onChange={this.handleOnChange} className="white-text" />
+                        <input type="text" id="username" onChange={this.handleOnChange}  />
                     </div>
                     <div className="input-field">
                         <label htmlFor="password" >Password</label>

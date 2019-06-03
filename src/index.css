@@ -6,7 +6,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.mycard{
+  margin-top : 50px;
+  margin-left :100px;
+  width : 500px;
+}
+.Myfooter{
+  background-color: dimgray !important;
+}
+Myform{
+  background-color: dimgray !important;
+}
 
+.mynewcard{
+  margin-top : 50px;
+  width : 700px;
+  margin-left : 400px;
+}
+.mydetailcard{
+  margin-top : 50px;
+  width : 700px;
+  margin-left : 400px;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #ec407a;
+  box-shadow: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

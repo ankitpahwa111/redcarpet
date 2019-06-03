@@ -24,7 +24,7 @@ class CreateReview extends Component {
         return (
             <div className="container">
                 <br/><br/>
-                <form onSubmit={this.handleOnSubmit} className="white">
+                <form onSubmit={this.handleOnSubmit} className="white Myform">
                     <h5 className="dark-grey text-darken-3">Create New Review</h5>
                     <br/>
                     <div className="input-field">

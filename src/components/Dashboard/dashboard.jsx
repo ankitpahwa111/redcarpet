@@ -50,13 +50,13 @@ class Dashboard extends Component {
                     <div className="col s12 m6">
                         <div class="row">
                             <div class="col s12 m7">
-                                <div class="card">
+                                <div class="card mycard">
                                     <div class="card-image">
-                                        <img src='https://s3.amazonaws.com/poly-screenshots.angel.co/enhanced_screenshots/1687048-original.' />
+                                        <img src='http://shinryoku.com/wp-content/uploads/2014/06/redcarpet1.png' />
                                         <span class="card-title red-text text-darken-2 ">Red Carpet Reviewer</span>
                                     </div>
                                     <div class="card-content">
-                                        <p class="h4">Through Halanx app, customers can know about their neighborhood happenings and they can order from neighborhood businesses like Grocery stores, restaurants, and pharmacies, and get it delivered in as little as an hour, through our part time shoppers. </p>
+                                        <p class="h4">RedCarpet lends to customers in India to finance their online purchases - ecommerce, travel etc. In India, credit and finance companies are able to service less than 3% of the customer base because there is no data, no widespread credit bureaus to profile and score customers</p>
                                     </div>
                                     <div class="card-action">
                                         {link}
