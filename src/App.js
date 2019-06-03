@@ -6,7 +6,6 @@ import Dashboard from './components/Dashboard/dashboard';
 import Footer from './components/Layout/Footer'
 import ReviewList from './components/Review/ReviewList'
 import Signin from './components/Auth/signin'
-import ReviewDetails from './components/Review/ReviewDetails'
 import AdminReviewList from './components/Review/AdminReviewList';
 import CreateReview from './components/Review/CreateReview';
 //import ReviewList from './components/Review/ReviewList'

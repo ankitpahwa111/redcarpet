@@ -19,12 +19,14 @@ class CreateReview extends Component {
         this.props.history.push('/');
     }
     render() {
-        const auth = this.props.auth;
-        if(!auth.uid) return <Redirect to="/login"></Redirect>
+        const user = this.props.user;
+        if(!user) return <Redirect to="/signin"></Redirect>
         return (
             <div className="container">
+                <br/><br/>
                 <form onSubmit={this.handleOnSubmit} className="white">
                     <h5 className="dark-grey text-darken-3">Create New Review</h5>
+                    <br/>
                     <div className="input-field">
                         <input type="text" id='title' onChange={this.handleOnChange} />
                         <label htmlFor="title">Review Title</label>
@@ -52,5 +54,10 @@ const mapDispatchToProps = (dispatch) => {
     }
     
 }
+const mapStateToProps = (state) =>{
+    return {
+        user : state.user,
+    }
+}
 
-export default connect(null, mapDispatchToProps)(CreateReview)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateReview)
