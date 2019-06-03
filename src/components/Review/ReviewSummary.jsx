@@ -21,9 +21,6 @@ class ReviewSummary extends Component {
                         <img src= {this.props.review.imageUrl} />
                     </div>
                     <div class="card-stacked">
-                        <div class="card-content">
-                            <p>{this.props.review.body}</p>
-                        </div>
                         <div class="card-action">
                             <p>{this.props.review.body}</p>
                         </div>

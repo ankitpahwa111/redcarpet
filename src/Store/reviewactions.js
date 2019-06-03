@@ -14,4 +14,4 @@ export const DeleteReview = (id) => {
 }
 
 
-export default { signIn, signout }
+export default { AddReview, DeleteReview }

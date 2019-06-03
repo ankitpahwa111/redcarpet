@@ -7,7 +7,8 @@ import Footer from './components/Layout/Footer'
 import ReviewList from './components/Review/ReviewList'
 import Signin from './components/Auth/signin'
 import ReviewDetails from './components/Review/ReviewDetails'
-//import Create from './components/Rrojects/createProject';
+import AdminReviewList from './components/Review/AdminReviewList';
+import CreateReview from './components/Review/CreateReview';
 //import ReviewList from './components/Review/ReviewList'
 class App extends Component {
   render() {
@@ -20,8 +21,8 @@ class App extends Component {
             <Route exact path='/' component={Dashboard}></Route>
             <Route exact path = '/signin' component = {Signin} ></Route>
             <Route exact path = '/userwall' component = {ReviewList}></Route>
-            <Route path="/adminwall" component={Signin}></Route>
-            <Route path="/create" component={Signin}></Route>
+            <Route path="/adminwall" component={AdminReviewList}></Route>
+            <Route path="/create" component={CreateReview}></Route>
 
           </Switch>
           <Footer/>
