@@ -1,42 +1,56 @@
-import React, { Component } from 'react'
+import React, { Component ,useState } from 'react'
 import { connect } from 'react-redux';
 import {AddReview} from '../../Store/reviewactions';
 import {Redirect} from 'react-router-dom'
-class CreateReview extends Component {
-    state = {
-        title: '',
-        body: '',
-        imageUrl: ''
-    };
-    handleOnChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
+const CreateReview = (props) => {
+    // state = {
+    //     title: '',
+    //     body: '',
+    //     imageUrl: ''
+    // };
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+    const handleOnChange = (e) => {
+        // this.setState({
+        //     [e.target.id]: e.target.value
+        // })
+        if(e.target.id=='title')
+        setTitle(e.target.value)
+        else if(e.target.id=='body')
+        setBody(e.target.value)
+        else
+        setImageUrl(e.target.value)
     }
-    handleOnSubmit = (e) => {
+    const handleOnSubmit = (e) => {
         e.preventDefault();
-        this.props.AddReview(this.state)
-        this.props.history.push('/');
+        const obj = {
+            title : title.toString(),
+            body : body.toString(),
+            imageUrl : imageUrl.toString()
+        }
+        props.AddReview(obj)
+        props.history.push('/');
     }
-    render() {
-        const user = this.props.user;
+   
+        const user = props.user;
         if(!user) return <Redirect to="/signin"></Redirect>
         return (
             <div className="container">
                 <br/><br/>
-                <form onSubmit={this.handleOnSubmit} className="white Myform">
+                <form onSubmit={handleOnSubmit} className="white Myform">
                     <h5 className="dark-grey text-darken-3">Create New Review</h5>
                     <br/>
                     <div className="input-field">
-                        <input type="text" id='title' onChange={this.handleOnChange} />
+                        <input type="text" id='title' onChange={handleOnChange} />
                         <label htmlFor="title">Review Title</label>
                     </div>
                     <div className="input-field">
-                        <input type="text" id='body' onChange={this.handleOnChange} />
+                        <input type="text" id='body' onChange={handleOnChange} />
                         <label htmlFor="body">Body</label>
                     </div>
                     <div className="input-field">
-                        <textarea id="imageUrl" className="materialize-textarea" onChange={this.handleChange}></textarea>
+                        <textarea id="imageUrl" className="materialize-textarea" onChange={handleOnChange}></textarea>
                         <label htmlFor="imageUrl">Image Url</label>
                         
                     </div>
@@ -46,7 +60,7 @@ class CreateReview extends Component {
                 </form>
             </div>
         )
-    }
+    
 }
 const mapDispatchToProps = (dispatch) => {
     return{

@@ -3,42 +3,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux'
 //import {Redirect} from 'react-router-dom'
-class Dashboard extends Component {
-    state = {
-        store: {}
-    }
-    componentDidMount() {
-        axios({
-            method: 'GET',
-            url: 'http://testapi.halanx.com/stores/',
-            headers: [
-
-                {
-                    "key": "Authorization",
-                    "value": "Token 0f948ebc7f620891adde46a8b1d1049cc7d56fcc",
-                    "description": "",
-                    "enabled": true
-                },
-                {
-                    "key": "",
-                    "value": "",
-                    "description": "",
-                    "type": "text",
-                    "enabled": true
-                }
-
-            ]
-        }).then((store) => {
-            console.log(store)
-            this.setState({
-                store: store
-            })
-        })
-    }
-    render() {
+const Dashboard=(props)=>{
+    
+    
         let link = <Link to='/signin'>Sign In</Link>;
-        if(this.props.user){
-            if(this.props.usertype=='reviewer')
+        if(props.user){
+            if(props.usertype=='reviewer')
             link = <Link to = '/userwall'>Go To Wall</Link>;
             else
             link = <Link to = '/adminwall'>Go To Admin Wall</Link>
@@ -72,7 +42,7 @@ class Dashboard extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 const mapStateToProps=(state)=>{
     return {
